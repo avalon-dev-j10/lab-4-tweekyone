@@ -1,5 +1,7 @@
 package ru.avalon.java.dev.j10.labs;
 
+import ru.avalon.java.dev.j10.labs.person.Person;
+import ru.avalon.java.dev.j10.labs.person.PersonCreator;
 import java.util.Comparator;
 
 public class Main {
@@ -12,7 +14,11 @@ public class Main {
          * чтобы он содержал 20 строк, расположенных не
          * по порядку.
          */
-	    String[] strings = null;
+	    String[] strings = new String[20];
+            for (int i = 0; i < strings.length; i++){
+                RandomString rnd = new RandomString();            
+                strings[i] = rnd.getString();
+            }
 
 	    /*
 	     * TODO(Студент): Проинициализируйте массив persons
@@ -22,7 +28,11 @@ public class Main {
 	     * 2. Проинициализируйте массив persons 20
 	     *    экземплярыми созданного класса.
 	     */
-	    Person[] persons = null;
+                        
+	    Person[] persons = new PersonCreator[20];
+            for (int i = 0; i < persons.length; i++){
+                persons[i] = new PersonCreator();
+            }
 
         /*
          * TODO(Студент): Проинициализируйте переменную sort
@@ -32,7 +42,7 @@ public class Main {
          * 2. Проинициализируйте переменную sort экземпляром
          *    созданного класса.
          */
-        Sort sort = null;
+        Sort sort = new Sorting();
 
         /*
          * TODO(Студент): Проинициализируйте переменную comparator
@@ -44,7 +54,7 @@ public class Main {
          * 2. Проинициализируйте переменную comparator
          *    экземпляром созданного класса.
          */
-        Comparator comparator = null;
+        Comparator comparator = new ComparatorString();
 
         /*
          * TODO(Студент): Отсортируйте массив persons по возрастанию
