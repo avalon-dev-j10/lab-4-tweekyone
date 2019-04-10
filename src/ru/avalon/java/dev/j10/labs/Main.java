@@ -18,6 +18,7 @@ public class Main {
             for (int i = 0; i < strings.length; i++){
                 RandomString rnd = new RandomString();            
                 strings[i] = rnd.getString();
+                
             }
 
 	    /*
@@ -90,5 +91,6 @@ public class Main {
          *    что массив отсортирован по убыванию.
          */
         sort.sort(strings, comparator);
+
     }
 }

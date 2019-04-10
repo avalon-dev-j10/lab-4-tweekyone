@@ -21,16 +21,14 @@ public class Sorting implements Sort{
             while(!sorted){
                 sorted = true;
                 for (int i = 0; i < array.length - 1; i++){
-                    for (int j = 1; j < array.length; j++){
-                        int result = array[i].compareTo(array[j]);
-                        if (result > 0){
-                            sorted = false;
+                    int result = array[i].compareTo(array[i+1]);
+                    if (result > 0){
+                        sorted = false;
                             
-                            tmp = array[i];
-                            array[i] = array[j];
-                            array[j] = tmp;
+                        tmp = array[i];
+                        array[i] = array[i+1];
+                        array[i+1] = tmp;
                         }
-                    }
                 }
             }
         }
@@ -38,8 +36,23 @@ public class Sorting implements Sort{
 
     @Override
     public void sort(Object[] array, Comparator comparator) {
-        if(array != null && array.length != 0){
-            Arrays.sort(array, comparator.reversed());
+        if (array != null && array.length != 0){
+            boolean sorted = false;
+            Object tmp;
+            
+            while(!sorted){
+                sorted = true;
+                for (int i = 0; i < array.length - 1; i++){
+                    int result = comparator.compare(array[i], array[i+1]);
+                    if (result < 0){
+                        sorted = false;
+                            
+                        tmp = array[i];
+                        array[i] = array[i+1];
+                        array[i+1] = tmp;
+                        }
+                }
+            }
         }
     }
     

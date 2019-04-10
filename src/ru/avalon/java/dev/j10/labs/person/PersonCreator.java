@@ -33,10 +33,10 @@ public class PersonCreator implements Person{
     
     @Override
     public int compareTo(Person that){
-        int result = getName().compareTo(that.getName());
-        if (result != 0){
-            return result;
-        } result = getBirthDate().compareTo(that.getBirthDate());
+        int result = this.getName().compareTo(that.getName());
+        if (result == 0){
+            return result = this.getBirthDate().compareTo(that.getBirthDate());
+        } 
         return result;
     }
 
